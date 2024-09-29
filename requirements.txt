@@ -1,0 +1,5 @@
+﻿pandas
+transformers
+numpy
+nameko
+faker
