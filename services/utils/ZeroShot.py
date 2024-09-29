@@ -5,14 +5,13 @@ from datasets import load_dataset
 
 
 class ZeroShotInference:
-    def __init__(self,model_name):
+    def __init__(self, model_name):
         self._modelName = model_name
         self._model = AutoModelForSeq2SeqLM.from_pretrained(model_name)
-        self._tokenizer = AutoTokenizer.from_pretrained(model_name,use_fast=True)
+        self._tokenizer = AutoTokenizer.from_pretrained(model_name, use_fast=True)
 
-    def generate(self,dialogue):
-
-        prompt =f"""
+    def generate(self, dialogue):
+        prompt = f"""
             Dialogue
             {dialogue}
             
@@ -29,5 +28,3 @@ class ZeroShotInference:
         )
 
         return output
-
-
